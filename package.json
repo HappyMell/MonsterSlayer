@@ -1,0 +1,16 @@
+{
+  "name": "MonsterSlayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d MonsterSlayer"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://happymell.github.io/MonsterSlayer",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
