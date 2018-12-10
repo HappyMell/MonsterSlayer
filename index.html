@@ -13,8 +13,10 @@
 
 <div id="app">
 <section class="row">
+
     <div class="small-6 columns">
-        <img class="sword" src="swordicon.png">
+            <img class="sword" src="swordicon.png">
+
         <h1 class="text-center">YOU</h1>
         <div class="healthbar">
             <div class="healthbar text-center" style="background-color: blue; margin: 0; color: white;" :style="{width: playerHealth + '%'}">
@@ -22,8 +24,10 @@
             </div>
         </div>
     </div>
+
     <div class="small-6 columns">
-        <img class="snake" src="snake.png">
+            <img class="snake" src="snake.png">
+
         <h1 class="text-center">MONSTER</h1>
         <div class="healthbar">
             <div class="healthbar text-center" style="background-color: red; margin: 0; color: white;" :style="{width: monsterHealth + '%'}">
@@ -48,19 +52,21 @@
 <section class="row log" v-if="turns.length > 0">
     <div class="small-12 columns">
         <ul>
-            <li v-for="turn in turns" :class="{'player-turn' : turn.isPlayer, 'monster-turn' : !turn.isPlayer}">
-                {{turn.text}}
-
-            </li>
+            <transition-group name="slide">
+                    <li v-for="turn in turns" 
+                    :class="{'player-turn' : turn.isPlayer, 'monster-turn' : !turn.isPlayer}"
+                    :key="turn.id"> {{turn.text}}
+                    
+            
+                        </li>
+            </transition-group>
+          
         </ul>
     </div>
 </section>
 </div>
         
-       
-
-
-
 <script src="css/app.js"></script>
 </body>
 </html>
+
